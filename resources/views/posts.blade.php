@@ -10,11 +10,17 @@
             {{ $post ['title'] }}
             </h2>
         </a>
-        
+
         <div class="text-base text-gray-500">
-            <a href="#">{{ $post ['author'] }}</a>  | {{ $post->created_at->diffForHumans() }}
-            {{-- {{ $post->created_at->format('j F Y') }} ini tgl--}} 
+            <a href="/authors/{{ $post->author->id }}">
+                {{ $post->author->name }}
+            </a> | {{ $post->created_at->diffForHumans() }}
         </div>
+        
+        {{-- <div class="text-base text-gray-500">
+            <a href="#">{{ $post ['author'] }}</a>  | {{ $post->created_at->diffForHumans() }}
+            {{-- {{ $post->created_at->format('j F Y') }} ini tgl
+        </div> --}}
         <p class="my-4 font-light">
             {{ Str::limit($post ['body'], 50) }}
         </p>
