@@ -12,9 +12,15 @@
         </a>
 
         <div class="text-base text-gray-500">
-            <a href="/authors/{{ $post->author->id }}">
+            By
+            <a href="/authors/{{ $post->author->username }}">
                 {{ $post->author->name }}
-            </a> | {{ $post->created_at->diffForHumans() }}
+            </a> 
+            in
+            <a href="/categories/{{ $post->category->slug }}">
+                {{ $post->category->name }}
+            </a> 
+            | {{ $post->created_at->diffForHumans() }}
         </div>
         
         {{-- <div class="text-base text-gray-500">
