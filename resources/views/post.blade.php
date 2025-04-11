@@ -10,11 +10,11 @@
         
         <div class="text-base text-gray-500">
             By
-            <a href="/authors/{{ $post->author->username }}">
+            <a href="/posts?author={{ $post->author->username }}">
                 {{ $post->author->name }}
             </a> 
             in
-            <a href="/categories/{{ $post->category->slug }}">
+            <a href="/posts?category={{ $post->category->slug }}">
                 {{ $post->category->name }}
             </a> 
             | {{ $post->created_at->diffForHumans() }}
